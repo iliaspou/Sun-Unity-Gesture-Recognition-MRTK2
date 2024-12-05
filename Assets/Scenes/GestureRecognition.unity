@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363509137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.416, y: -0.181, z: 1.332}
+  m_LocalPosition: {x: 0.586, y: -0.181, z: 2.941}
   m_LocalScale: {x: 0.114895776, y: 0.114895776, z: 0.114895776}
   m_Children: []
   m_Father: {fileID: 0}
@@ -484,7 +484,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808828020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25.8}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0010008812}
   m_LocalScale: {x: 0.43661034, y: 0.43661034, z: 0.43661034}
   m_Children:
   - {fileID: 1588074525}
@@ -617,7 +617,7 @@ RectTransform:
   m_GameObject: {fileID: 869313390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4386849, y: 0.11677951, z: 0.13279259}
+  m_LocalScale: {x: 0.43485144, y: 0.26649496, z: 0.2195}
   m_Children:
   - {fileID: 1751294984}
   m_Father: {fileID: 896465696}
@@ -625,8 +625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 7.5, y: -18}
+  m_SizeDelta: {x: -24.999985, y: -76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869313392
 MonoBehaviour:
@@ -767,8 +767,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896465691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.04}
-  m_LocalScale: {x: 0.00955266, y: 0.00955266, z: 0.00955266}
+  m_LocalPosition: {x: 0, y: 0, z: 4.4}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 869313391}
   - {fileID: 808828021}
@@ -778,8 +778,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.134, y: 0}
-  m_SizeDelta: {x: 500, y: 565}
+  m_AnchoredPosition: {x: -0.134, y: 0.16}
+  m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &963194225
 GameObject:
@@ -820,7 +820,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1002,7 +1002,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425621089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25.8}
+  m_LocalPosition: {x: 0, y: 0, z: -0.001}
   m_LocalScale: {x: 0.43661034, y: 0.43661034, z: 0.43661034}
   m_Children:
   - {fileID: 1722530629}
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   predictionDisplayDuration: 1
   predictionThreshold: 0.4
   predictionPauseDuration: 0.3
+  cube: {fileID: 363509137}
 --- !u!4 &1746641945
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,7 +1376,7 @@ GameObject:
   - component: {fileID: 1751294986}
   - component: {fileID: 1751294985}
   m_Layer: 5
-  m_Name: PredictionPanel (TMP)
+  m_Name: PredictionText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1389,7 +1390,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751294983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -60.244305}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.4365072, y: 9.152794, z: 8.049086}
   m_Children: []
   m_Father: {fileID: 869313391}
@@ -1429,8 +1430,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284111451
-  m_fontColor: {r: 0.3584906, g: 0.3534176, b: 0.3534176, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1447,8 +1448,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

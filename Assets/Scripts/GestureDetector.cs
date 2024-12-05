@@ -56,7 +56,7 @@ public class GestureDetector : MonoBehaviour
     public static event GesturePerformed OnGesturePerformed;
 
     // Controll the gesture detection process (start/stop)
-     private bool isDetectionEnabled = true;
+    private bool isDetectionEnabled = true;
 
     void Start()
     {
@@ -165,7 +165,7 @@ public class GestureDetector : MonoBehaviour
                 {
                     NotifySubscribers("NotOkGesture");
                     // Debug.Log("NotOk:" + prediction[1]);
-                    predictionDisplayPanel.text = "NOT OK GESTURE!";
+                    predictionDisplayPanel.text = "Gesture detected!";
                     predictionDisplayTimer = predictionDisplayDuration;
                     windowData.Clear();
                     insertDataToWindow = false;
