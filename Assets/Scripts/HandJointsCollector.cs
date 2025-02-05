@@ -8,6 +8,13 @@ using Microsoft;
 using Microsoft.MixedReality.Toolkit.Utilities;
 using Microsoft.MixedReality.Toolkit.Input;
 
+// using Microsoft.MixedReality.Toolkit;
+// using Microsoft.MixedReality.Toolkit.WindowsMixedReality;
+// using UnityEngine.XR.Management;
+
+using Microsoft.MixedReality.Toolkit;
+// using Windows.Perception.Spatial; 
+
 public class HandJointsCollector : MonoBehaviour
 {
     // Select Hand
@@ -18,21 +25,25 @@ public class HandJointsCollector : MonoBehaviour
     GameObject[] cubeJoints = new GameObject[27];
 
     // Save Joints
-    public string outputFolder = ".handData/";
+    public string outputFolder;
     string outputFilePath;
 
-    // Gesture
-    public string gesture = "NotOk";
-
-    // Joints saving FPS
+    // Fps
     public int FPS = 60;
-    float period, timeInterval;
+
+    // Gesture
+    public string gesture;
 
     public bool renderJoints = true;
     public bool saveJoints = true;
 
+    /* Control data collection rate */
+    // public bool controlDataCollectionRate = false;
+    // float period, timeInterval;
+
     void Start()
     {
+        Application.targetFrameRate = FPS;
         if (renderJoints)
         {
             for (int i = 0; i < cubeJoints.Length; i++)
@@ -47,12 +58,17 @@ public class HandJointsCollector : MonoBehaviour
             outputFilePath = CreateOutputFile();
         }
 
-        period = 1 / FPS;
-
+        /* Control data collection rate */
+        // if (controlDataCollectionRate)
+        // {
+        //     period = 1/(float)FPS;
+        //     Debug.Log("Period: " + period);
+        // }
     }
 
     void Update()
     {
+        // Debug.Log("Time: " + Time.unscaledDeltaTime);
         if (renderJoints)
         {
             for (int i = 0; i < cubeJoints.Length; i++)
@@ -72,10 +88,21 @@ public class HandJointsCollector : MonoBehaviour
 
             if (saveJoints)
             {
-                if (fpsController())
-                {
-                    SaveJoints();
-                }
+                SaveJoints();
+
+                /* Control data collection rate */
+                // if (!controlDataCollectionRate)
+                // {
+                    
+                //     SaveJoints();
+                // }
+                // else 
+                // {
+                //     if (fpsController())
+                //     {
+                //         SaveJoints();
+                //     }
+                // }
             }
         }
     }
@@ -92,7 +119,9 @@ public class HandJointsCollector : MonoBehaviour
                 {
                     Vector3 position = jointPose.Position;
                     Quaternion rotation = jointPose.Rotation;
-                    jointsStr += jointPose.Position + " " + jointPose.Rotation + ",";
+                    // Debug.Log(position);
+                    // Debug.Log(rotation);
+                    jointsStr += jointPose.Position.ToString("F4") + " " + jointPose.Rotation.ToString("F4") + ",";
                 }
             }
         }
@@ -103,10 +132,11 @@ public class HandJointsCollector : MonoBehaviour
 
     private void RenderJoints()
     {
-        for (int i = 0; i < cubeJoints.Length; i++)
-        {
-            cubeJoints[i].GetComponent<Renderer>().enabled = false;
-        }
+        // for (int i = 0; i < cubeJoints.Length; i++)
+        // {
+        //     cubeJoints[i].GetComponent<Renderer>().enabled = false;
+        // }
+
         // Loop through all joints
         foreach (TrackedHandJoint joint in System.Enum.GetValues(typeof(TrackedHandJoint)))
         {
@@ -122,24 +152,29 @@ public class HandJointsCollector : MonoBehaviour
                     cubeJoints[(int)joint].GetComponent<Renderer>().enabled = true;
                     cubeJoints[(int)joint].transform.position = jointPose.Position;
                     cubeJoints[(int)joint].transform.rotation = jointPose.Rotation;
+
+                    // Debug.Log(transform.TransformPoint(jointPose.Position));
                 }
             }
         }
     }
 
-    private bool fpsController()
-    {
-        timeInterval += Time.unscaledDeltaTime;
-        if (timeInterval < period)
-        {
-            return false;
-        }
-        else
-        {
-            timeInterval = timeInterval - period;
-            return true;
-        }
-    }
+    /* Control data collection rate */
+    // private bool fpsController()
+    // {
+    //     timeInterval += Time.unscaledDeltaTime;
+    //     if (timeInterval < period)
+    //     {
+    //         Debug.Log("False");
+    //         return false;
+    //     }
+    //     else
+    //     {
+    //         Debug.Log("True");
+    //         timeInterval = timeInterval - period;
+    //         return true;
+    //     }
+    // }
 
     private void CreateOutputFolder()
     {

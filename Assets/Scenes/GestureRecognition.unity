@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jointsMarker: {fileID: 5094541278508200130, guid: 55461b7d50438a24099b113b99943eba, type: 3}
-  renderJoints: 0
+  renderJoints: 1
   FPS: 50
   maxWindowCapacity: 11
   onnxModel: {fileID: 5022602860645237092, guid: b012c32960ec5f04d87698e30876b435, type: 3}
@@ -1349,7 +1349,6 @@ MonoBehaviour:
   predictionDisplayDuration: 1
   predictionThreshold: 0.4
   predictionPauseDuration: 0.3
-  cube: {fileID: 363509137}
 --- !u!4 &1746641945
 Transform:
   m_ObjectHideFlags: 0

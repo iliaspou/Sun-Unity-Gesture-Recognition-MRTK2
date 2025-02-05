@@ -237,10 +237,6 @@ public class GestureDetector : MonoBehaviour
 
     private void RenderJoints()
     {
-        for (int i = 0; i < cubeJoints.Length; i++)
-        {
-            cubeJoints[i].GetComponent<Renderer>().enabled = false;
-        }
         // Loop through all joints
         foreach (TrackedHandJoint joint in System.Enum.GetValues(typeof(TrackedHandJoint)))
         {
@@ -249,8 +245,8 @@ public class GestureDetector : MonoBehaviour
             {
                 if ((int)joint != 0)
                 {
-                    Vector3 position = jointPose.Position;
-                    Quaternion rotation = jointPose.Rotation;
+                    // Vector3 position = jointPose.Position;
+                    // Quaternion rotation = jointPose.Rotation;
                     // Debug.Log($"Joint: {joint}, Position: {position}, Rotation: {rotation}");
 
                     cubeJoints[(int)joint].GetComponent<Renderer>().enabled = true;
